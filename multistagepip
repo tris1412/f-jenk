@@ -1,0 +1,19 @@
+Task 2: Multi-Stage Pipeline
+1. Create a pipeline job called **BuildTestPipeline**.
+2. Use the following script:
+```
+pipeline {
+agent any
+stages {
+stage('Build') {
+steps { echo 'Building the project...' }
+}
+stage('Test') {
+steps { echo 'Running tests...' }
+}
+stage('Deploy') {
+steps { echo 'Deploying application...' }
+}
+}
+}
+```
