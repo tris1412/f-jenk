@@ -1,0 +1,22 @@
+
+
+Task 4: Parameterized Pipeline
+1. Create a pipeline job called **UserPipeline**.
+2. Add a **String Parameter** named `USERNAME`.
+3. Script:
+```
+pipeline {
+agent any
+parameters {
+string(name: 'USERNAME', defaultValue: 'User', description: 'Enter your name')
+}
+stages {
+stage('Greet') {
+steps {
+echo "Hello, ${params.USERNAME}!"
+}
+}
+}
+}
+```
+4. Run builds with different USERNAME values.
