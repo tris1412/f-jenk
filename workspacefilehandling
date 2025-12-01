@@ -1,0 +1,16 @@
+pipeline{
+    agent any
+    stages{
+        stage('create file'){
+            steps{
+                writeFile file :'pipl.txt' , text:"helloooo"
+            }
+        }
+        stage('show file'){
+            steps{
+            powershell 'Get-content pipl.txt'
+          }
+        }
+       
+    }
+}
