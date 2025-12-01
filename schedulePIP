@@ -1,0 +1,10 @@
+pipeline{
+agent any
+stages{
+  stage('date and time'){
+        steps{
+                powershell 'Get-Date'
+            }
+        }
+    }
+}
